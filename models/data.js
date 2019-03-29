@@ -1,4 +1,9 @@
-const pgp = require('pg-promise')
+const pgp = require('pg-promise')({
+    query: e =>{
+        
+    }
+})
+
 const options = {
     host:'localhost',
     database: 'coffee-app'
