@@ -4,8 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon app.js",
+    "db:create": "createdb coffee-app",
+    "db:init": "psql -f schema.sql coffee-app && psql -f seed.sql coffee-app",
+    "db:destroy": "dropdb coffee-app",
+    "db:reset": "npm run db:destroy && npm run db:create && npm run db:init",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
 }
